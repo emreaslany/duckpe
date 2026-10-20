@@ -2,12 +2,6 @@
 
 Linux yerel yetki yükseltme (Local Privilege Escalation) kontrollerini tek bir betikle yapan, renkli ve JSON çıktı destekli tarama aracı.
 
-## Gereksinimler
-
-- Bash 4+
-- Zorunlu: `find`, `sort`, `timeout`, `awk`, `sed`, `grep`, `stat`, `mktemp`
-- Opsiyonel: `getcap`, `ss`/`netstat`, `systemctl`, `findmnt`, `sudo`, `curl`, `searchsploit`, `jq`, `python3`
-
 ## Kullanım
 
 ```bash
