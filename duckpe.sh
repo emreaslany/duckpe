@@ -2,7 +2,7 @@
 # =============================================================================
 #  Linux Yerel Yetki Yükseltme Kontrolcüsü (Local Privilege Escalation Checker)
 # -----------------------------------------------------------------------------
-#  Kullanım : ./lpe-check.sh [seçenekler]
+#  Kullanım : ./duckpe.sh [seçenekler]
 # =============================================================================
 
 set -o pipefail
@@ -32,7 +32,7 @@ declare -A seen_ports=()
 
 usage() {
     cat <<'EOF'
-Kullanım: lpe-check.sh [seçenekler]
+Kullanım: duckpe.sh [seçenekler]
 
   -v, --verbose          Tüm SUID/SGID dosyalarını ve ayrıntıları göster
       --json             Makine okunabilir JSON çıktısı üret
@@ -288,10 +288,10 @@ check_dependencies() {
 }
 
 setup_tmpdir() {
-    if TMPDIR_RUN=$(mktemp -d "${TMPDIR:-/tmp}/lpe-check.XXXXXX" 2>/dev/null); then
+    if TMPDIR_RUN=$(mktemp -d "${TMPDIR:-/tmp}/duckpe.XXXXXX" 2>/dev/null); then
         return 0
     fi
-    TMPDIR_RUN="${TMPDIR:-/tmp}/lpe-check.$$"
+    TMPDIR_RUN="${TMPDIR:-/tmp}/duckpe.$$"
     mkdir -p "$TMPDIR_RUN" 2>/dev/null || TMPDIR_RUN=""
 }
 
